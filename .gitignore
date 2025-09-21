@@ -91,7 +91,6 @@ typings/
 output/
 *.csv
 *.xlsx
-*.json
 
 # Logs
 logs

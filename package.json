@@ -1,0 +1,77 @@
+{
+  "name": "film-fetcher",
+  "version": "1.0.0",
+  "description": "A comprehensive CLI tool to fetch movie data from multiple APIs (OMDB, TMDB, IMDB) and export to JSON, CSV, Excel, SQL formats with advanced filtering and enrichment capabilities",
+  "main": "index.js",
+  "bin": {
+    "film-fetcher": "./bin/film-fetcher"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "setup": "node setup.js",
+    "test:search": "node index.js search --titles \"The Matrix\" --format json",
+    "test:discover": "node index.js discover --genre \"Action\" --start-date \"2020-01-01\" --max-pages 2 --format csv",
+    "test:trending": "node index.js trending --time-window week --format json",
+    "test:top-rated": "node index.js top-rated --max-pages 1 --format json",
+    "test:advanced": "node index.js advanced-search --min-rating 8.0 --min-votes 100000 --genres Action --format sql",
+    "test:sql": "node index.js search --titles \"Inception\" --apis omdb tmdb --format sql",
+    "test:all-formats": "node index.js search --titles \"The Godfather\" --format json csv excel sql",
+    "prepublishOnly": "npm run test:cli",
+    "test:cli": "node index.js config && node index.js search --titles \"Test\" --apis tmdb --format json",
+    "pack:check": "npm pack --dry-run",
+    "publish:check": "npm view film-fetcher"
+  },
+  "keywords": [
+    "movies", 
+    "api", 
+    "cli", 
+    "omdb", 
+    "tmdb", 
+    "imdb", 
+    "csv", 
+    "excel", 
+    "json", 
+    "sql", 
+    "database",
+    "film",
+    "cinema",
+    "entertainment",
+    "data-fetching",
+    "movie-database",
+    "export",
+    "research"
+  ],
+  "author": {
+    "name": "asterixix",
+    "email": "artur@sendyka.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asterixix/film-fetcher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/asterixix/film-fetcher/issues"
+  },
+  "homepage": "https://github.com/asterixix/film-fetcher#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "csv-writer": "^1.6.0",
+    "exceljs": "^4.4.0",
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
+    "moment": "^2.29.4",
+    "lodash": "^4.17.21",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
