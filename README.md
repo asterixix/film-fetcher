@@ -1,4 +1,4 @@
-# Filmweb Fetcher
+# Film Fetcher
 
 A comprehensive Node.js application that fetches movie data from multiple APIs (OMDB, TMDB, IMDB) and exports it to JSON, CSV, and Excel formats for research purposes.
 
