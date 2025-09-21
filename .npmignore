@@ -1,0 +1,72 @@
+# Development files
+.env
+.env.*
+env.example
+
+# Output directory
+output/
+*.csv
+*.xlsx
+*.json
+*.sql
+
+# Test files
+movies.txt
+examples.md
+
+# Development tools
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+.nyc_output
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+
+# Git files
+.git/
+.gitignore
+
+# Documentation drafts
+docs/
+*.draft.md
+
+# Test output
+test-output/

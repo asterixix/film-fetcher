@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+/**
+ * film-fetcher CLI
+ * Global command-line tool for fetching movie data from multiple APIs
+ */
+
+const path = require('path');
+const { spawn } = require('child_process');
+
+// Get the directory where this script is located
+const binDir = __dirname;
+const rootDir = path.resolve(binDir, '..');
+const mainScript = path.join(rootDir, 'index.js');
+
+// Pass all arguments to the main script
+const args = process.argv.slice(2);
+
+// Spawn the main script with all arguments
+const child = spawn('node', [mainScript, ...args], {
+  stdio: 'inherit',
+  cwd: rootDir
+});
+
+// Handle process termination
+child.on('close', (code) => {
+  process.exit(code);
+});
+
+child.on('error', (error) => {
+  console.error('Error running film-fetcher:', error.message);
+  process.exit(1);
+});
